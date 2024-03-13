@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  webp:
+    image: ghcr.io/reddio-com/eth_logcache:latest
+    restart: always
+    environment:
+      - RPC_URL=https://eth-mainnet.reddio.com
+      - START_BLOCK=15560257
+    volumes:
+      - ./data:/data
+    ports:
+      -  3000:3000
